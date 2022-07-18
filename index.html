@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <link rel="stylesheet" type="text/css" href="style/estilo.css">
+    <link rel="stylesheet" type="text/css" href="style/responsive.css">
+    <link rel="stylesheet" type="text/css" href="style/pou.estilo.css"
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Operacional Mobile</title>
+
+</head>
+
+<body>
+
+    <div class="container-celular">
+
+        <div class="tela">
+
+            <div class="hora">
+
+                <p class="horasreal"></p>
+
+            </div>
+
+            <div class="puxar-menu">
+
+                <div class="Menu-hidem">
+
+                    <div class="opcoes">
+
+                        <div class="op1">
+
+                            <img id = "BTmodoBlackDesativado" class="imgopcoes" src="img/desativado.png">
+                            <img id="ativado-hidem" class="imgopcoes" src="img/ativado.png">
+                            <p class="text-op">Modo Black</p>
+
+                        </div>
+
+                        <div class="op2">
+
+                            <img id = "btAjuste" class="imgopcoes" src="img/icons apps/configuracao.png">
+                            <p class="text-op">Ajustes</p>
+                        </div>
+
+                        <div class="op3">
+
+                            <img id = "btBloquearTela" class="imgopcoes" src="img/icons8-iphone-30.png">
+                            <p class="text-op">Bloquear Tela</p>
+                        </div>
+
+                        <div class="op4">
+
+                            <img class="imgopcoes" src="img/icons8-twelve-o'clock-48.png">
+                            <p id = "Icon_Hora" class="text-op horasreal"></p>
+                        </div>
+
+                    </div>
+
+                    <div class="brilho">
+
+                        <img id ="brilho-medio" class="imgopcoes" src="img/brilho medio.png">
+                        <img id="brilho-vazio" class="imgopcoes" src="img/brilho vazio.png">
+                        <img id="brilho-cheio" class="imgopcoes" src="img/brilho cheio.png">
+                        <p class="text-op">Ajustar Brilho</p>
+
+                        <input class="inputBrilho" type="range" value="50">
+                        <input class="inputBrilhoModoBlack" type="range" value="50">
+
+                       
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="icons-redes">
+
+                <img class="imgrede" src="img/icons8-wi-fi-48.png">
+                <img class="imgrede" src="img/icons8-conexão-ótima-30.png">
+                <div class="bateria">
+                    <p class="batery"> 100% </p>
+                </div>
+
+            </div>
+
+            <div class="tela-configurar">
+
+                <div class="text-bemvindo">
+
+                    <img class="android" src="img/icons8-android-os-100.png">
+                    <p>Seja bem vindo ao sistema Operacional Mobile,<br>Eu sou o seu assistente virtual, e estarei com
+                        você para te ajudar a configurar seu smartphone</p>
+
+                </div>
+
+                <div class="inputs-config">
+
+                    <input class="Nome_usuario1" type="text" placeholder="Digite seu nome">
+                    <input class="Numero_Usuario" type="tel" placeholder="Celular">
+                    <input class="Senha1" type="password" placeholder="Crie uma senha">
+                    <input class="confrimar_Senha" type="password" placeholder="Confirmar Senha">
+                    <button class="verificar_conta btHabilitado" disabled>Criar Conta</button>
+                    <button class="btConta">Ja Tenho Uma conta</button>
+
+                </div>
+
+            </div>
+
+            <div class="TelaLoader">
+
+                <img src="img/icons8-android-os-100.png" width="95px">
+                <p>Configurando Seu Smartphone para uso</p>
+                <p>Isso pode demorar um pouco...</p>
+                <p>Você sera redericionado para a tela de bloqueio, use a sua senha que você criou para acessar os Apps
+                </p>
+                <p>Apos criar a sua conta, va ate o botâo "ja tenho uma conta" e clique nele </p>
+                <p class="erro-SENHAS">As senhas inseridas nâo correspondem</p>
+
+                <img src="img/icons8-dots-loading.gif" width="80px">
+
+
+            </div>
+
+            <div class="tela-bloqueio">
+
+                <div class="horas">
+
+                    <h2 class="horasreal"></h2>
+
+                </div>
+
+                <div class="input-bloqueio">
+
+                    <input class="inputSenha2" id="inputBloque" type="password" placeholder="Senha">
+                    <p class="campoSenha2" id="campoSenha"></p>
+                    <p class="text-ass2">Digite sua senha</p>
+                    <button class="desbloquear">Desbloquear</button>
+
+                </div>
+
+                <div class="teclado-do-sistema">
+
+                    <div id="teclado1">
+
+                        <button onclick="inserir('1')">1</button>
+                        <button onclick="inserir('2')">2</button>
+                        <button onclick="inserir('3')">3</button>
+                        <button onclick="inserir('4')">4</button>
+                        <button onclick="inserir('5')">5</button>
+                        <button onclick="inserir('6')">6</button>
+                        <button onclick="inserir('7')">7</button>
+                        <button onclick="inserir('8')">8</button>
+                        <button onclick="inserir('9')">9</button>
+                        <button onclick="apagar()">X</button>
+                        <button onclick="inserir('0')">0</button>
+                        <button onclick="verificador1()">OK</button>
+                        <button onclick="chamarTecladoLetras()"> > </button>
+
+                    </div>
+
+                    <div id="teclado2">
+
+                        <button onclick="inserir2('q')">q </button>
+                        <button onclick="inserir2('w')">w</button>
+                        <button onclick="inserir2('e')">e</button>
+                        <button onclick="inserir2('r')">r</button>
+                        <button onclick="inserir2('t')"> t</button>
+                        <button onclick="inserir2('y')">y</button>
+                        <button onclick="inserir2('u')">u</button>
+                        <button onclick="inserir2('i')">i</button>
+                        <button onclick="inserir2('o')">o</button>
+                        <button onclick="inserir2('p')">p</button>
+                        <button onclick="inserir2('a')">a</button>
+                        <button onclick="inserir2('s')">s</button>
+                        <button onclick="inserir2('d')">d</button>
+                        <button onclick="inserir2('f')">f</button>
+                        <button onclick="inserir2('g')">g</button>
+                        <button onclick="inserir2('h')">h</button>
+                        <button onclick="inserir2('j')">j</button>
+                        <button onclick="inserir2('k')">k</button>
+                        <button onclick="inserir2('l')">l</button>
+                        <button onclick="inserir2('z')">z</button>
+                        <button onclick="inserir2('x')">x</button>
+                        <button onclick="inserir2('c')">c</button>
+                        <button onclick="inserir2('v')">v</button>
+                        <button onclick="inserir2('b')">b</button>
+                        <button onclick="inserir2('n')">n</button>
+                        <button onclick="inserir2('m')">m</button>
+                        <button onclick="verificador1()">OK</button>
+
+                        <button onclick="apagar()">X</button>
+                        <button onclick="chamarTecladoNumero()">
+                            < </button>
+
+                    </div>
+
+                    <div class="assistente-virtual">
+
+                        <img id="androidButton" class="imgopcoes" src="img/assistente-virtual.png">
+                        <p class="text-ass">Assistente Virtual<br>clique no android se precisar de ajuda</p>
+
+                    </div>
+
+                    <div class="box-assistente">
+
+                        <img src="img/icons8-android-os-100.png">
+
+                        <div class="text-assistente">
+
+                            <p class="text-ass1">Bem Vindo(A)</p>
+                            <p id="receber_nome_usu" class="text-ass1">Nome usuario</p>
+                            <p class="text-ass1">Eu sou o seu assistente virtual, se você ja tem uma conta criada, basta
+                                digitar a sua senha para desbloquear o seu smartphone, caso ainda nâo tenha uma conta,
+                                volte a tela de configurações e crie uma conta facil e rapido. A e lembrando que você
+                                pode usar tanto o seu teclado nativo ou o teclado do seu smartphone virtual, caso queira
+                                desativar clique no botâo abaixo
+                            </p>
+
+                        </div>
+
+                        <div class="bt-assistente">
+
+                            <button class="desativer_teclado">Desativar teclado do sistema</button>
+                            <button class="ativar_teclado">Ativar teclado do sistema</button>
+
+                        </div>
+
+                        <p class="text-ass2">Você pode ativar qundo quiser, basta ir nas configuraçôes do seu smartphone
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="tela-inicial">
+
+                <div class="hora-data">
+
+                    <div class="clima">
+
+                        <div class="container-fluid">
+
+                            <div class="card text-center shadow-lg" style="width: 26rem;">
+                        
+                              <div class="card-header bg-white text-dark font-weight-bold">
+                                TEMPO E TEMPERATURA
+                              </div>
+                        
+                              <div class="card-body">
+                                <div class="city">Cidade Exemplo, BR</div>
+                                <div class="date">Terça, 1 Dezembro 2020</div>
+
+                                <div class="weather py-2">Nublado</div>
+                                <div class="low-high">22°c / 23°c</div>
+
+                              </div>
+                        
+                        
+                            </div>
+
+                          </div>
+
+                    </div>
+
+
+                </div>
+
+                <div class="Lista-Apps">
+
+
+                    <ul id="lista_de_apps">
+                        <li>
+                            <img id = "btAbrirGaleria" class="imgApp" src="img/icons apps/galeria.png">
+                            <p class="fontAlt">Galeria</p>
+                        </li>
+
+                        <li>
+                            <img id = "btAbrirTelaLista" class="imgApp" src="img/icons apps/lista.png">
+                            <p class="fontAlt">Lista</p>
+                        </li>
+
+                        <li>
+
+                            <img id = "btAbrirConversor" class="imgApp" src="img/icons apps/convertor.png">
+                            <p class="fontAlt">Coverter $</p>
+                        </li>
+
+                        <li>
+                            <img id = "brAbrirCalculadora" class="imgApp" src="img/icons apps/calculadora.png">
+                            <p class="fontAlt">Calculadora</p>
+
+                        </li>
+
+                        <li>
+
+                            <img id = "btAbrirTelaGames" class="imgApp" src="img/icons apps/icons8-joystick-64.png">
+                            <p class="fontAlt">Games</p>
+
+                        </li>
+
+                        <li>
+
+                            <img id="BtAbrirTela_configuracoes" class="imgApp" src="img/icons apps/configuracao.png">
+                            <p class="fontAlt">Configuraçôes</p>
+
+                        </li>
+
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div class="box-telas-apps">
+
+                <div class="subTelaConfig">
+
+                    <div class="nome-config">
+
+                        <h2>Configurar</h2>
+
+                    </div>
+
+                    <div class="lista-config">
+
+                        <div class="tela-opcoes">
+
+                            <img class="imgconfig" src="img/icons8-iphone-96.png">
+                            <p class="text-config">Tela</p>
+                        </div>
+
+                        <div class="armazenamento">
+
+                            <img class="imgconfig" src="img/icons8-pilha-48.png">
+                            <p class="text-config">Armazenamento</p>
+
+                        </div>
+
+                        <div class="bateriaconfig">
+
+                            <img class="imgconfig" src="img/icons8-bateria-cheia-48.png">
+                            <p class="text-config">Bateria</p>
+
+                        </div>
+
+                        <div class="ass-virtual">
+
+                            <img class="imgconfig" src="img/icons8-android-os-100.png">
+                            <p class="text-config">Assistente Virtual</p>
+
+                        </div>
+
+
+                        <div class="conta-usu">
+
+                            <img class="imgconfig" src="img/icons8-menu-de-usuário-masculino-90.png">
+                            <p class="text-config">Conta do usuario</p>
+
+                        </div>
+
+                        <div class="sobre">
+
+                            <img class="imgconfig" src="img/icons8-sobre-48.png">
+                            <p class="text-config">Sobre o telefone</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="subTelaTelaconfig">
+
+                    <div class="nome-config">
+
+                        <h2>Tela</h2>
+
+                    </div>
+
+                    <h1 class="text-config">Temas tela incial</h1>
+
+                    <div class="listaTela">
+
+
+                        <div class="tema">
+                            <p class="text-config">Tema 1</p>
+                            <div class="yeelow"></div>
+                        </div>
+                        <div class="tema">
+                            <p class="text-config">Tema 2</p>
+                            <div class="red"></div>
+                        </div>
+                        <div class="tema">
+                            <p class="text-config">Tema 3</p>
+                            <div class="green"></div>
+                        </div>
+                        <div class="tema">
+                            <p class="text-config">Tema 4</p>
+                            <div class="blue"></div>
+                        </div>
+                        <div class="tema">
+                            <p class="text-config">Tema 5</p>
+                            <div class="white"></div>
+                        </div>
+                        <div class="tema">
+                            <p class="text-config">Tema 6</p>
+                            <div class="rosa"></div>
+                        </div>
+                        <div class="tema">
+                            <p class="text-config">Tema 7</p>
+                            <div class="preto"></div>
+                        </div>
+                        <div class="tema">
+                            <p class="text-config">Padrâo</p>
+                            <div class="cinza"></div>
+                        </div>
+
+                    </div>
+
+                    <h1 class="text-config">Alterar Fontes</h1>
+
+                    <div class="alterarFontes">
+
+                        <div class="listaFontes">
+
+                            <div class="fonte">
+                                <p id = "font1" class="text-fonte">Franklin Gothic Medium</p>
+                            </div>
+                            <div class="fonte">
+                                <p id = "font2" class="text-fonte">Lucida Sans</p>
+                            </div>
+                            <div class="fonte">
+                                <p id = "font3" class="text-fonte">Times New Roman</p>
+                            </div>
+                            <div class="fonte">
+                                <p id = "font4" class="text-fonte">system-ui, -apple-system</p>
+                            </div>
+                            <div class="fonte">
+                                <p id = "font5" class="text-fonte">monospace</p>
+                            </div>
+                            <div class="fonte">
+                                <p id = "font6" class="text-fonte">Impact</p>
+                            </div>
+                            <div class="fonte">
+                                <p id = "font7" class="text-fonte">Padrâo do sistema</p>
+                            </div> <!-- Anek Malayalam', sans-serif -->
+
+
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="tamanho-fonte">
+
+                        <h1 class="text-config">Tamanho da fonte</h1>
+
+                        <div class="lista-tamanho">
+
+                            <p class="text-fonte">Tamanho padrâo</p>
+                            <input class="inputFont" type="range" aria-valuemax="3" value="50">
+
+                        </div>
+
+                    </div>
+
+                    <div class="tamnho-icones">
+
+                        <h1 class="text-config">Tamanho dos icones</h1>
+
+                        <div class="lista-tamn-icones">
+
+                            <div class="opecoes-icons1">
+
+                                <p class="text-fonte">Padrâo do sistema</p>
+                                <input id = "padrao" class="radio" type="radio" name="escolha" checked>
+
+                            </div>
+
+                            <div class="opecoes-icons1">
+
+                                <p class="text-fonte">Tamanho Medio</p>
+                                <input id = "TM" class="radio" type="radio" name="escolha">
+
+                            </div>
+
+                            <div class="opecoes-icons1">
+
+                                <p class="text-fonte">Tamanho Grande</p>
+                                <input id = "TG" class="radio" type="radio" name="escolha">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div id="opcoesArma" class="subTelaarmazenamnetoconfig">
+
+                    <div class="nome-config">
+
+                        <h2>Armazenamento</h2>
+                    </div>
+
+                    <div class="Box">
+
+                        <div class="Box-arma">
+
+                            50%
+
+                        </div>
+
+                        <p class="text-config">Espaço Total 120GB</p>
+
+                    </div>
+
+                </div>
+
+                <div id="opcoesBate" class="subTelaBateriaconfig"></div>
+
+                <div id="opcoesAssi" class="subTelaAssVirtualconfig">
+
+                    <div class="cabecalho">
+
+                        <p>Assistente virtual esta online</p>
+                        <div class="logoOnline"></div>
+                    </div>
+
+                    <div class="box_msgs_assvt">
+
+                        <div class="mgs1">
+
+                            <p class="text-config">Ola,</p>
+                            <p id = "nome_usu2" class="text-config"> </p>
+                        </div>
+
+                        <div class="msg2">
+                            <p class="text-config">Para conversa com o seu assistente virtual basta digitar os numeros no input de texto..</p>
+
+                            <p class="text-config">1-Quem é voce? </p>
+                            <p class="text-config">2-Como excluo minha conta? </p>
+                            <p class="text-config">3-Qual a versâo do sistema atual? </p>
+                            <p class="text-config">4-Como alterar a minha senha de bloqueio? </p>
+                            <p class="text-config">5-Oque eu posso fazer dentro do sistema? </p>
+                            <p class="text-config">6-Me recomenda algo para fazer </p>
+                            <p class="text-config">7-Você tem jogos? </p>
+                            <p class="text-config">8-Oque é um assistente virtual? </p>
+                            <p class="text-config">9-Limpar conversa </p>
+
+                            <div class="respostas">
+
+                                <div class="resposta1"> <img class="iconChat" src="img/icons8-android-os-100.png">
+                                    <p>Eu sou o seu assistente virtual, estarei aqui para te ajudar
+                                        e guiar.
+                                    </p>
+                                </div>
+
+                                <div class="resposta2"> <img class="iconChat" src="img/icons8-android-os-100.png">
+                                    <p> Para excluir a sua conta, você deve ir em configuraçôes, e acessar a opçâo conta
+                                        la você tera todas as opçôes.</p>
+
+                                </div>
+
+                                <div class="resposta3"> <img class="iconChat" src="img/icons8-android-os-100.png">
+                                    <p> Atualmente você esta usando a versaâo 1.0 do sistema, em breve vira uma
+                                        atualizaçâo</p>
+
+                                </div>
+
+                                <div class="resposta4"> <img class="iconChat" src="img/icons8-android-os-100.png">
+                                    <p> Para alterar a senha bloqueio, va ate configuraçôes, conta, e clique em alterar
+                                        senha de bloqueio.</p>
+
+                                </div>
+
+                                <div class="resposta5"> <img class="iconChat" src="img/icons8-android-os-100.png">
+                                    <p>Alterar papel de parede, entre temas ou fotos da galeria, jogar games,
+                                        usar a calculadora, criar uma senha de bloqueio, ajustar o brilho da tela e usar os apps da tela inicial.
+                                    </p>
+                                </div>
+
+                                <div class="resposta6"> <img class="iconChat" src="img/icons8-android-os-100.png">
+                                    <p> você pode ir estudar programaçâo com a devFast, Clica no link para saber mais <a
+                                            target="_blank">https://www.youtube.com/watch?v=W6thoLrnE1c</a></p>
+
+                                </div>
+
+                                <div class="resposta7"> <img class="iconChat" src="img/icons8-android-os-100.png">
+                                    <p> Possuo dois jogos instalados no sistema, POU JS e MARIOS BROS, vai la na tela
+                                        inicial e aproveita. </p>
+
+                                </div>
+
+                                <div class="resposta8"> <img class="iconChat" src="img/icons8-android-os-100.png">
+                                    <p> Um assistente virtual pode realizar várias funções,atendimento telefônico,
+                                        gerenciamento de compromissos e reuniões, organização de agenda etc.</p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="nao_entendiddas">
+
+                                <div class="nao-entendida"> <img class="iconChat" src="img/icons8-android-os-100.png"> <p> Desculpa, mas você digitou algo que eu nâo entendo
+                                    e por isso nâo vou responder, faça outra pergunta por favor <P> </P class="Nome_dia">  </p> </div>
+
+                            </div>
+
+                           <div class="inputmsg">
+
+                            <input class="inputMsg" type="number" placeholder="Escreva...">
+                            <button class="btmsg">Enviar</button>
+
+                           </div>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <div id="opcoesConta" class="subTelaContaconfig">
+
+                    <div class="nome-config">
+
+                        <h2>Conta</h2>
+                    </div>
+
+                    <div class="redefinir">
+
+                        <button id = "Bt-formatar" class="btCONTA">Redefinir celular</button>
+                        <p class="text-p">Isso ira apagar sua conta, senha e qualquer configuraçâo salva</p>
+
+                    </div>
+
+                    <div class="informaçoes-usuario">
+
+                        <p class="text-config">Sua informaçôes cadastradas</p>
+                        
+                     <div class="tt"> <p class="text-config">Nome cadastrado:</p>  <p id = "N-u" class="text-fonte"></p>  </div>  
+                     <div class="tt"> <p class="text-config">Numero Cadastrado:</p> <p id = "Numero_us" class="text-fonte"></p>  </div> 
+                     <div class="tt"> <p class="text-config">Senha atual:</p> <p id = "s-atual" class="text-fonte"></p> </div>   
+
+                    </div>
+
+                </div>
+
+                <div id="opcoesConta" class="subTelaSobreconfig">
+
+                    <div class="nome-config">
+
+                        <h2>Sobre o telefone</h2>
+                    </div>
+
+                    <div class="sobreTele">
+
+                        <p class="text-fonte">Versâo do sistema</p>
+                        <p class="text-fonte">Versâo do assistente virtual</p>
+                        <p class="text-fonte">Atualizaçôes</p>
+                        <p class="text-fonte">Desenvolvido por Glaudson Nunes</p>
+                        <p class="text-fonte">Linkedln</p>
+                        <p class="text-fonte">GitHub</p>
+
+
+                    </div>
+
+                </div>
+
+                <!--        LISTA DE TAREFAS                         -->
+
+                <div class="telaListaeTarefas">
+
+                    <div class="nome-config">
+
+                        <h2>Bloco de notas</h2>
+                    </div>
+
+                    <div class="area-text">
+
+                        <input class="inputTextB" type="text" placeholder="Escreva...">
+                        <button id = "btCC" class="btCONTA">Salvar anotaçâo</button>
+                    
+                    </div>
+
+                    <div class="anotaçaoSalva">
+
+
+                    </div>
+
+                </div>
+
+                <div class="calculadora">
+
+                    <p id="texto"> </p>
+
+                    <table class="listabt">
+    
+                        <tr>
+    
+                            <td><button onclick="inserirC('7')"> 7</button></td>
+                            <td><button onclick="inserirC('8')">8</button></td>
+                            <td><button onclick="inserirC('9')"> 9 </button></td>
+                            <td><button onclick="inserirC('*')"> X</button></td>
+                            <td><button onclick="back()"> < </button>
+                            </td>
+    
+                        </tr>
+    
+                        <tr>
+    
+                            <td><button onclick="inserirC('4')"> 4</button></td>
+                            <td><button onclick="inserirC('5')">5</button></td>
+                            <td><button onclick="inserirC('6')"> 6 </button></td>
+                            <td><button onclick="inserirC('-')"> -</button></td>
+                            <td><button onclick="limpar()">C</button></td>
+    
+                        </tr>
+    
+                        <tr>
+    
+                            <td><button onclick="inserirC('1')"> 1</button></td>
+                            <td><button onclick="inserirC('2')">2</button></td>
+                            <td><button onclick="inserirC('3')"> 3 </button></td>
+                            <td><button onclick="inserirC('+')""> +</button></td>
+            
+            
+                            </tr>
+            
+                            <tr>
+            
+                                <td><button onclick=" inserirC('/')"> /</button></td>
+                            <td><button onclick="inserirC('0')">0</button></td>
+                            <td><button onclick="inserirC('.')""> . </button></td>
+                                <td><button onclick=" calcular()"> =</button></td>
+                        </tr>
+    
+                    </table>
+
+                </div>
+
+                <div class="TelaAppCoverter">
+
+                    <div class="nome-config">
+
+                        <h2>Converter Real$</h2>
+                    </div>
+
+                    <div class="taxa">
+
+                        <span class="text-config" id="tax_info"></span>
+                        <div>
+                          <select id="from_currency"></select>
+                          <input type="number" id="from_ammount" value="1" />
+                        </div>
+                        <button class="btCONTA" id="swap"> Converter ⇅ </button>
+                        <div>
+                          <select id="to_currency"></select>
+                          <input type="number" id="to_ammount" />
+
+                        </div>
+
+                    </div>
+                
+                </div>
+                
+
+                <div class="Tela-box-games">
+
+                    <div class="nome-config">
+
+                        <h2>Games</h2>
+                    </div>
+
+                    <div class="opcoes-games">
+
+                        <div class="mario">
+                            <img id = "btAbrirGame1" src = "img/icon marios bros.png" width="60px">
+                            <P  class="text-config">Super Mario Jump</P>
+                        </div>
+
+                        <div class="pou">
+
+                            <img id = "btAbrirGame2" src = "img/icon pou.png" width="60px">
+                            <P  class="text-config">Pou JS</P>
+
+                        </div>
+                     
+                       
+                    </div>
+
+                </div>
+
+                <div class="abrindoGameMarioS">
+
+                    <iframe class="abrindoGame" src = "mariosBros/index.mario.html" name="gamer"></iframe>
+
+                </div>
+
+                <div class="AbrindoGamePou">
+
+                    <iframe class="abrindoGame2" src="index2.html"></iframe>
+
+                </div>
+
+               
+
+                <div class="Tela-Galeria">
+
+                    <div class="fotos">
+
+                        <div class="lista-fotos">
+
+            
+                            <img class="foto-galeria" src="img/fotos-galeria/foto6.jpg">
+                            <img class="foto-galeria" src="img/fotos-galeria/foto3.jpg">
+                            <img class="foto-galeria" src="img/fotos-galeria/nasa1.png">
+                            <img class="foto-galeria" src="img/fotos-galeria/nasa2.png">
+                            <img class="foto-galeria" src="img/fotos-galeria/nasa3.jpg">
+                            <img class="foto-galeria" src="img/fotos-galeria/nasa4.png">
+                            <img class="foto-galeria" src="img/fotos-galeria/nasa5.png">
+
+                        </div>
+
+                          <button class="btcarro">Tela Cheia</button> 
+
+                    </div>
+
+                </div>
+
+                <div class="Carroessel-de-fotos">
+
+                    <div class="img1"> <img class="foto-carro" src="img/fotos-galeria/foto3.jpg"> <p  id = "addFT1" class="text-config">Definir como Tela de bloqueio</p> </div>
+                    <div class="img2"> <img class="foto-carro" src="img/fotos-galeria/foto6.jpg"> <p id = "addFT2" class="text-config">Definir como Tela de bloqueio</p></div>
+                    <div class="img3"> <img class="foto-carro" src="img/fotos-galeria/nasa1.png"> <p id = "addFT3" class="text-config">Definir como Tela de bloqueio</p></div>
+                    <div class="img4">  <img class="foto-carro" src="img/fotos-galeria/nasa2.png"> <p id = "addFT4" class="text-config">Definir como Tela de bloqueio</p></div>
+                    <div class="img5"> <img class="foto-carro" src="img/fotos-galeria/nasa3.jpg"> <p id = "addFT5" class="text-config">Definir como Tela de bloqueio</p></div>
+                    <div class="img6">  <img class="foto-carro" src="img/fotos-galeria/nasa4.png"> <p id = "addFT6" class="text-config">Definir como Tela de bloqueio</p></div>
+                    <div class="img7">  <img class="foto-carro" src="img/fotos-galeria/nasa5.png"> <p id = "addFT7" class="text-config">Definir como Tela de bloqueio</p></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="botoes-nav1">
+
+            <img class="navImg" src="img/seta-esquerda.png">
+            <img class="navImg" src="img/contorno-do-circulo.png">
+
+        </div>
+
+        <div class="botoesnav2">
+
+            <img class="navImg" src="img/seta-esquerda.png">
+            <img class="navImg" src="img/contorno-do-circulo.png">
+
+        </div>
+
+        <div class="botoesnav3">
+
+            <img class="navImg" src="img/seta-esquerda.png">
+            <img id="voltarTudo1" class="navImg" src="img/contorno-do-circulo.png">
+
+        </div>
+
+        <div class="botoesnav4">
+
+            <img class="navImg" src="img/seta-esquerda.png">
+            <img id="voltarTudo1" class="navImg" src="img/contorno-do-circulo.png">
+
+        </div>
+
+
+    </div>
+
+    <script src="scripts/telaConfig.js"></script>
+    <script src="scripts/telaBloqueio.js"></script>
+    <script src="scripts/teclado_alternativo.js"></script>
+    <script src="scripts/TelaInicial.js"></script>
+    <script src="scripts/botoesNaegaçâo.js"></script>
+    <script src="scripts/bloco_de_notas.js"></script>
+    <script src="scripts/calculadora.js"></script>
+    <script src="scripts/conversosr.js"></script>
+    <script src="scripts/Logica_Geral.js"></script>
+    <script src="scripts/assistenteVirtual.js"></script>
+    <script src="scripts/brilho_fotos.js"></script>
+</body>
+
+</html>

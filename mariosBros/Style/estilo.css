@@ -1,0 +1,163 @@
+*{
+
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+
+    background-color: #cccc;
+}
+
+.Tela-game{
+
+    width: 100%;
+    height: 565px;
+    border-bottom: 50px solid green;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(rgba(9, 9, 92, 0.648),rgba(39, 39, 255, 0.615));
+}
+
+.Tela-game_Noite{
+
+    width: 100%;
+    height: 565px;
+    border-bottom: 50px solid green;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(rgba(3, 3, 75, 0.648),rgba(0, 0, 50, 0.615));
+}
+
+.pipe{
+
+    width: 50px;
+    position: absolute;
+    bottom: 0;
+    right: -2500px;
+    animation: pipe infinite  linear;
+    animation-duration: 1s;
+}
+
+.mario{
+
+    width: 90px;
+    position: absolute;
+    bottom: 0;
+}
+
+.game-over{
+
+    width: 90px;
+    position: absolute;
+    bottom: 0;
+    display: none;
+}
+
+.PuloClicado{
+
+    animation: jump ease-out infinite 500ms;
+}
+
+.Game_ouver{
+    
+    width: 100%;
+    height: 100%;
+    font-size: 1.2rem;
+    color: red;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    top:30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(17, 17, 17, 0.385);
+    display: none;
+
+}
+
+.Game_ouver button{
+
+    width: 300px;
+    height: 70px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 2rem;
+    color: red;
+    cursor: pointer;
+}
+
+.nuvens{
+
+    width: 500px;
+    position: absolute;
+    right: -1000px;
+    animation: nuvems infinite 20s linear;
+}
+
+@keyframes nuvems{
+
+    from{
+
+        right: 0;
+    }
+
+    to{
+
+        right: 100%;
+    }
+}
+
+@keyframes pipe{
+
+    from{
+
+        right: 0;
+    }
+
+    to{
+
+        right: 100%;
+    }
+}
+
+@keyframes jump{
+
+    0%{
+
+        bottom: 0;
+
+    }
+
+    40%{
+
+        bottom: 180px;
+
+    }
+
+    50%{
+
+        bottom: 180px;
+
+    }
+
+    60%{
+
+        bottom: 180px;
+
+
+    }
+
+    100%{
+
+        bottom:0;
+
+    }
+}

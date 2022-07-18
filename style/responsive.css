@@ -1,0 +1,75 @@
+
+@media screen and (max-width:376px){
+
+  
+    
+    .container-celular{
+
+        width: 365px;
+        height: 670px;
+    
+    }
+
+    .inputs-config{
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .inputs-config input{
+
+        width: 300px;
+        height: 35px;
+        border-radius: 5px;
+        outline: none;
+        font-size: 1.1rem;
+        border: none;
+        padding: 10px;
+    }
+
+    .tela-configurar{
+
+        width: 360px;
+        height: 550px;
+        background-color: #2C3639;
+        display: block;
+    }
+
+    .subTelaTelaconfig, .subTelaarmazenamnetoconfig,.subTelaBateriaconfig,.subTelaAssVirtualconfig,.subTelaContaconfig, .subTelaSobreconfig,.tela-inicial,.calculadora,.tela-bloqueio,.telaListaeTarefas,.TelaAppCoverter,.abrindoGameMarioS,.AbrindoGamePou,.Tela-Galeria,.Carroessel-de-fotos{
+
+        width: 360px;
+        height: 550px;
+
+    }
+
+    #teclado1 button{
+
+        margin: 5px;
+        margin-top: 5px;
+    
+    }
+    .navImg,.imgopcoes{
+
+        width: 60px;
+    }
+
+    .assistente-virtual{
+
+        margin-top: -5px;
+        
+    }
+
+    .android{
+
+        width: 50px;
+    }
+
+    .text-bemvindo{
+
+        font-size: 0.9rem;
+    }
+
+}
+
